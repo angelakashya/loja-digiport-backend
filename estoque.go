@@ -36,3 +36,6 @@ func criaEstoque() []model.Produto {
 
 	return produtos
 }
+
+/*func buscaPorNome (nome string) []model.Produto {
+}*/
