@@ -1,5 +1,10 @@
 package main
 
 func main() {
-	StartServer()
+	/*nome := ""
+	fmt.Scan("Digite o nome do produto desejado", &nome)
+	produtosFiltrados := buscaPorNome(nome)
+
+	fmt.Println(produtosFiltrados)*/
+
 }
