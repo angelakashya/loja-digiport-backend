@@ -37,5 +37,18 @@ func criaEstoque() []model.Produto {
 	return produtos
 }
 
-/*func buscaPorNome (nome string) []model.Produto {
-}*/
+func buscaPorNome(nome string) []model.Produto {
+
+	produtos := []model.Produto{
+		{
+			Id:                  "1",
+			Nome:                "Cabo Vela Uno",
+			Preco:               69.90,
+			Descricao:           "Cabo Vela Uno 1985 86 87 88 1989 1.3 1.5 8v SCT42",
+			Imagem:              "blob:https://web.whatsapp.com/574d7341-f19a-409d-be93-becf32542f61",
+			QuantidadeEmEstoque: 5,
+		},
+	}
+
+	return produtos
+}
