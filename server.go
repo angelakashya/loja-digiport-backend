@@ -14,6 +14,18 @@ func StartServer() {
 }
 
 func produtosHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "GET" {
+		getProdutos(w, r)
+	} else if r.Method == "POST" {
+		addProdutos(w, r)
+	}
+}
+func addProdutos(w http.ResponseWriter, r *http.Request) {
+	var produtos model.Produto
+	json.NewDecoder(r.Body).Decode(&produtos)
+}
+
+func getProdutos(w http.ResponseWriter, r *http.Request) {
 	queryNome := r.URL.Query().Get("nome")
 	if queryNome != "" {
 		produtosPorNome := buscaPorNome(queryNome)
@@ -22,13 +34,4 @@ func produtosHandler(w http.ResponseWriter, r *http.Request) {
 		produtos := ListaProdutos
 		json.NewEncoder(w).Encode(produtos)
 	}
-}
-
-func addProduto(w http.ResponseWriter, r *http.Request) {
-	var produto []model.Produto
-	json.NewDecoder(r.Body).Decode(&produto)
-	criaEstoque()
-
-	w.WriteHeader(http.StatusCreated)
-
 }

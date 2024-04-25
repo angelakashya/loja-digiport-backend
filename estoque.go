@@ -1,6 +1,8 @@
 package main
 
 import (
+	"errors"
+
 	"github.com/angelakashya/loja-digiport-backend/model"
 )
 
@@ -51,6 +53,12 @@ func buscaPorNome(nome string) []model.Produto {
 	return resultado
 }
 
-func adicionaProduto(produto model.Produto) {
-	ListaProdutos = append(ListaProdutos, produto)
+func adicionaProduto(produtoNovo model.Produto) error {
+	for _, produto := range ListaProdutos {
+		if produtoNovo.Id == produto.Id {
+			return errors.New("Id de produto já existe")
+		}
+	}
+	ListaProdutos = append(ListaProdutos, produtoNovo)
+	return nil
 }
