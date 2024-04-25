@@ -3,6 +3,8 @@ package main
 import (
 	"encoding/json"
 	"net/http"
+
+	"github.com/angelakashya/loja-digiport-backend/model"
 )
 
 func StartServer() {
@@ -22,11 +24,11 @@ func produtosHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-/*func addEmployee(w http.ResponseWriter, r *http.Request) {
-	var employee model.Employee
-	json.NewDecoder(r.Body).Decode(&employee)
-
-	registerEmployee(employee)
+func addProduto(w http.ResponseWriter, r *http.Request) {
+	var produto []model.Produto
+	json.NewDecoder(r.Body).Decode(&produto)
+	criaEstoque()
 
 	w.WriteHeader(http.StatusCreated)
-}*/
+
+}

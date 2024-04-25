@@ -4,7 +4,7 @@ import (
 	"github.com/angelakashya/loja-digiport-backend/model"
 )
 
-var ListaProdutos []model.Produto
+var ListaProdutos []model.Produto = []model.Produto{}
 
 func criaEstoque() {
 	produtos := []model.Produto{
@@ -49,4 +49,8 @@ func buscaPorNome(nome string) []model.Produto {
 		}
 	}
 	return resultado
+}
+
+func adicionaProduto(produto model.Produto) {
+	ListaProdutos = append(ListaProdutos, produto)
 }
