@@ -12,7 +12,12 @@ func StartServer() {
 }
 
 func produtosHandler(w http.ResponseWriter, r *http.Request) {
-	produtos := criaEstoque()
-
-	json.NewEncoder(w).Encode(produtos)
+	queryNome := r.URL.Query().Get("nome")
+	if queryNome != "" {
+		produtosPorNome := buscaPorNome(queryNome)
+		json.NewEncoder(w).Encode(produtosPorNome)
+	} else {
+		produtos := ListaProdutos
+		json.NewEncoder(w).Encode(produtos)
+	}
 }
