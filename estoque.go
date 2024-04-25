@@ -4,8 +4,9 @@ import (
 	"github.com/angelakashya/loja-digiport-backend/model"
 )
 
+var ListaProdutos []model.Produto
+
 func criaEstoque() {
-	ListaProdutos []model.Produtos 
 	produtos := []model.Produto{
 		{
 			Id:                  "1",

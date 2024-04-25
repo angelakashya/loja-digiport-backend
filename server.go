@@ -21,3 +21,12 @@ func produtosHandler(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(produtos)
 	}
 }
+
+/*func addEmployee(w http.ResponseWriter, r *http.Request) {
+	var employee model.Employee
+	json.NewDecoder(r.Body).Decode(&employee)
+
+	registerEmployee(employee)
+
+	w.WriteHeader(http.StatusCreated)
+}*/

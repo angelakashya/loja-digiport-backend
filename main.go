@@ -7,7 +7,7 @@ import (
 func main() {
 	nome := ""
 	fmt.Scan("Digite o nome do produto desejado", &nome)
-	produtosFiltrados := buscaPorNome()
+	produtosFiltrados := buscaPorNome(nome)
 
 	fmt.Println(produtosFiltrados)
 
