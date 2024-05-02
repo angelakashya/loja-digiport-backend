@@ -23,6 +23,13 @@ func produtosHandler(w http.ResponseWriter, r *http.Request) {
 func addProdutos(w http.ResponseWriter, r *http.Request) {
 	var produtos model.Produto
 	json.NewDecoder(r.Body).Decode(&produtos)
+
+	err := adicionaProduto(produtos)
+	if err != nil {
+		w.WriteHeader(http.StatusBadRequest)
+		json.NewEncoder(w).Encode(model.Erro{})
+	}
+	w.WriteHeader(http.StatusCreated)
 }
 
 func getProdutos(w http.ResponseWriter, r *http.Request) {

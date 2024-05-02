@@ -10,7 +10,7 @@ var ListaProdutos []model.Produto = []model.Produto{}
 
 func criaEstoque() {
 	produtos := []model.Produto{
-		{
+		/*{
 			Id:                  "1",
 			Nome:                "Cabo Vela Uno",
 			Preco:               69.90,
@@ -35,7 +35,7 @@ func criaEstoque() {
 			Descricao:           "Bobina Iginicao Sportage 2005 A 2006 2.0 16v",
 			Imagem:              "blob:https://web.whatsapp.com/55c59e90-d51c-481d-9d42-a42ea9da2198",
 			QuantidadeEmEstoque: 8,
-		},
+		},*/
 	}
 
 	ListaProdutos = produtos
