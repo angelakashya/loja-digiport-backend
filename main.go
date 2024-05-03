@@ -1,6 +1,10 @@
 package main
 
+import (
+	"fmt"
+)
+
 func main() {
-	criaEstoque()
-	StartServer()
+	fmt.Println("Bem vindo(a) à loja DigPort!")
+
 }

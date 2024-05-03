@@ -1,6 +1,6 @@
 package main
 
-import (
+/*import (
 	"encoding/json"
 	"net/http"
 
@@ -42,3 +42,4 @@ func getProdutos(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(produtos)
 	}
 }
+*/
